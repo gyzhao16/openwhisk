@@ -421,5 +421,5 @@ metrics:
 
 user_events: "{{ user_events_enabled | default(false) | lower }}"
 
-numcore: "{{ invoker_numcore | default(2) }}"
+numcore: "{{ invoker_numcore | default(8) }}"
 
