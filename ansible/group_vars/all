@@ -193,7 +193,7 @@ invoker:
   arguments: "{{ invoker_arguments | default('') }}"
   userMemory: "{{ invoker_user_memory | default('4096m') }}"
   # Specify if it is allowed to deploy more than 1 invoker on a single machine.
-  allowMultipleInstances: "{{ invoker_allow_multiple_instances | default(false) }}"
+  allowMultipleInstances: "{{ invoker_allow_multiple_instances | default(true) }}"
   # Specify if it should use docker-runc or docker to pause/unpause containers
   useRunc: "{{ invoker_use_runc | default(true) }}"
   docker:
@@ -420,3 +420,6 @@ metrics:
     port: "{{ metrics_kamon_statsd_port | default('8125') }}"
 
 user_events: "{{ user_events_enabled | default(false) | lower }}"
+
+numcore: "{{ invoker_numcore | default(2) }}"
+
