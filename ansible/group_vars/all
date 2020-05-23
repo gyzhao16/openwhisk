@@ -185,6 +185,7 @@ invokerHostname: "{{ invokerHostnameFromMap | default(inventory_hostname) }}"
 __invoker_ssl_keyPrefix: "invoker-"
 
 invoker:
+  numcore: "{{ invoker_numcore | default(8) }}"
   dir:
     become: "{{ invoker_dir_become | default(false) }}"
   confdir: "{{ config_root_dir }}/invoker"
@@ -421,5 +422,5 @@ metrics:
 
 user_events: "{{ user_events_enabled | default(false) | lower }}"
 
-numcore: "{{ invoker_numcore | default(8) }}"
+
 
